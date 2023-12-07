@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="Eng">
+    <head>
+        <link rel="stylesheet" href="css/cookBook.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cooking Assistant</title>
+    </head>
+    <body onresize="swapLogo()" onload="loadRecipes()">
+        <div id="layer0">
+            <div class="navbarContainer">
+                <!-- <div id="navbarContainerLogo"></div> -->
+                <div class="navbar">
+                    <div id="navbarLogo">
+                        <img id="logo" src="img/logo.png" alt="cookingAssistantLogo">
+                    </div>
+                    <div id="navMenuContainer">
+                        <input id="search" placeholder="Search..."/>
+                        <div class="navMenu">
+                            <div class="navButtons">Рецепти</div>
+                            <div class="navButtons">EN/BG</div>
+                        </div>
+                        <div class="menuToggle" id="mobileMenu">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="layer1">
+                <div id="contentContainer">
+                    <div id="content">
+                        <div id="latestRecipe">
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div id="recipeList">
+                    recipe placeholde
+                </div>
+            </div>
+        </div>
+        <script src="js/cookBook.js"></script>
+    </body>
+</html>
+
+<!-- <img id="latest" src="../img/Meatballs.jpg"> -->

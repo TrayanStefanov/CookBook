@@ -1,0 +1,260 @@
+:root{
+    --main: #49A900	;/* Main Primary color */
+    --lime:#80E632 ;
+    --lightgreen:#5ACF00 ;
+    --green:#3A8600 ;
+    --darkgreen:#275B00 ;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
+::placeholder {
+    color: rgb(180, 65, 19);
+}
+/* Navbar css*/
+
+.navbarContainer{
+    background-color: var(--green);
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 95%;
+    max-width: 1720px;
+    margin: 0 auto;
+}
+
+#logo{
+    transition: all 2s ease-in-out;
+}
+
+/* #navbarLogo{
+    color: var(--lime);
+    cursor: pointer;
+    align-self: center;
+    margin-right: 1.5%;
+} */
+
+#navMenuContainer{
+    display: flex;
+    width: 100%;
+}
+
+.navMenu{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    flex-grow: 4;
+}
+
+.navButtons{
+    color: var(--lime);
+    margin: 5px 10px;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.navButtons:hover{
+    color: red;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+#search{
+    background-color: var(--lime);
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    width: 100%;
+    flex-grow: 6;
+    align-self: center;
+    margin: 5px 10px;
+}
+
+#search:focus{
+    outline: none;
+}
+
+.menuToggle .bar{
+    width: 25px;
+    height: 8px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: var(--lightgreen);
+    display: none;
+    cursor: pointer;
+}
+
+.bar:nth-child(1){
+    transform: translateY(13px) rotate(60deg);
+}
+
+.bar:nth-child(3){
+    transform: translateY(-13px) rotate(-60deg);
+}
+
+/* .bar:nth-child(4){
+    background-color: #6fbcbc;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    transform: translateY(-30px);
+}
+
+.bar:nth-child(5){
+    background-color: var(--pinegreen);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    transform: translateY(-46px);
+    border: 1px solid;
+} */
+
+/* Navbar css*/
+
+/* body css*/
+
+#layer0{
+    background-color: var(--darkgreen);
+    width: 100%;
+    height:100%;
+    z-index: 0;
+    overflow: auto;
+    padding-top: 120px;
+}
+
+#layer1{
+    height: 100% ;
+    width: 90%;
+    padding: 3%;
+    margin: auto auto;
+    background-color: var(--lime);
+    border: 1px solid black;
+}
+
+#content{
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+
+#latestRecipe{
+    display: block;
+    background-color: var(--main);
+    max-width: 57%;
+    min-width: 57vh;
+    align-content: center;
+    margin-right: 3%;
+    object-fit: contain;
+}
+
+#latest{
+    object-fit: contain;
+    width: 100%;
+}
+
+/* For mobile and small screens*/
+
+@media screen and (max-width:768px) {
+    .navbarContainer{
+        position: fixed;
+    }
+
+    .navMenu{
+        display: flex;
+        flex-direction: column;
+        background: var(--main);
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    /* #navbarLogo{
+        margin-left:0px;
+        background-image: url(../img/logo_simple_small.png);
+        width: 84px;
+        height: 63px;
+        background-repeat: no-repeat;
+    } */
+
+    .navMenu.active{
+        left:0;
+        opacity: 1;
+        transition: all 0.5 ease;
+    }
+
+    .navButtons{
+        text-align: center;
+        color: red;
+        line-height: 60px;
+        width: 100%;
+        margin: 0;
+    }
+
+    .navButtons:hover{
+        background-color: var(--darkgreen);
+        color: var(--lime);
+        transition: all 0.5s ease-out;
+    }
+
+    #navMenuContainer{
+        display: flex;
+    }
+    #mobileMenu{
+        flex-grow: 1;
+    }
+
+    .menuToggle .bar{
+        display: block;
+        cursor: pointer;
+        border: none;
+        height: 6.5px;
+        transition: all 0.4s ease-out;
+    }
+
+    .menuToggle:hover{
+        cursor: pointer;
+    }
+
+    .bar:nth-child(1){
+        transform: translateY(20px) rotate(0deg);
+    }
+    .bar:nth-child(3){
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    #mobileMenu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobileMenu.is-active .bar:nth-child(1){
+        transform: translateY(11.5px) rotate(45deg);
+    }
+
+    #mobileMenu.is-active .bar:nth-child(3){
+        transform: translateY(-11.5px) rotate(-45deg);
+    }
+}
