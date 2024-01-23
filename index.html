@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="Eng">
+<html lang="EN">
     <head>
-        <link rel="stylesheet" href="css/cookBook.css" type="text/css">
+        <link rel="stylesheet" href="./css/cookBook.css" type="text/css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cook Book</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     </head>
-    <body onresize="swapLogo()" onload="loadRecipes()">
+    <body>
         <div id="layer0">
             <div class="navbarContainer">
                 <!-- <div id="navbarContainerLogo"></div> -->
                 <div class="navbar">
                     <div id="navbarLogo">
-                        <img id="logo" src="img/logo.png" alt="cookingAssistantLogo">
+                        <img id="logo" src="./img_assets/logo.png" alt="cookingAssistantLogo">
                     </div>
                     <div id="navMenuContainer">
                         <input id="search" placeholder="Search..."/>
@@ -29,21 +34,104 @@
                     </div>
                 </div>
             </div>
-            <div id="layer1">
-                <div id="contentContainer">
-                    <div id="content">
-                        <div id="latestRecipe">
-                        </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <h2>Готварска Книга</h2>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#add-recipe-modal">Добави рецепта</button>
                     </div>
                 </div>
             </div>
-                <div id="recipeList">
-                    recipe placeholde
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-hover text-center table-secondary table-striped">
+                            <thead class="bg-dark text-white">
+                                <tr>
+                                    <th>Рецепта</th>
+                                    <th>Съставки</th>
+                                    <th>Време</th>
+                                    <th>Описание</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <div class="modal" id="add-recipe-modal">
+            <div class="modal-dialog">
+                <div class="modal-content animated slideInLeft">
+                    <div class="modal-header bg-success text-white">
+                        <h3>Добави Рецепта</h3>
+                        <button class="btn-close" data-dismiss="modal">
+                            <i class="fa fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <form id="add-recipe-form">
+                            <div class="form-group">
+                                <input required id="add-title" type="text" class="form-control" placeholder="Рецепта">
+                            </div>
+                            <div class="form-group">
+                                <input required id="add-ingredients" type="text" class="form-control" placeholder="Съставки">
+                            </div>
+                            <div class="form-group">
+                                <input required id="add-timeToCook" type="number" class="form-control" placeholder="Време">
+                            </div>
+                            <div class="form-group">
+                                <input required id="add-description" type="text" class="form-control" placeholder="Описание">
+                            </div>
+                            <div>
+                                <input type="submit" value="Добави Рецепта" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-        <script src="js/cookBook.js"></script>
+
+        <div class="modal" id="update-recipe-modal">
+            <div class="modal-dialog">
+                <div class="modal-content animated slideInRight">
+                    <div class="modal-header bg-secondary text-white">
+                        <h3>Поправи Рецепта</h3>
+                        <button class="btn-close" data-dismiss="modal">
+                            <i class="fa fa-times-circle"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body bg-light">
+                        <form id="update-recipe-form">
+                            <div class="form-group">
+                                <input hidden id="update-id" type="text" class="form-control" placeholder="Рецепта Иден. Номер">
+                            </div>
+                            <div class="form-group">
+                                <input required id="update-title" type="text" class="form-control" placeholder="Рецепта">
+                            </div>
+                            <div class="form-group">
+                                <input required id="update-ingredients" type="text" class="form-control" placeholder="Съставки">
+                            </div>
+                            <div class="form-group">
+                                <input required id="update-timeToCook" type="text" class="form-control" placeholder="Време">
+                            </div>
+                            <div class="form-group">
+                                <input required id="update-description" type="text" class="form-control" placeholder="Описание">
+                            </div>
+                            <div>
+                                <input type="submit" value="Поправи Рецепта" class="btn btn-secondary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script type= "module" src="./js/cookBook.js"></script>
     </body>
 </html>
-
-<!-- <img id="latest" src="../img/Meatballs.jpg"> -->
