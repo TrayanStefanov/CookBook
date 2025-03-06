@@ -1,260 +1,238 @@
-:root{
-    --main: #49A900	;/* Main Primary color */
-    --lime:#80E632 ;
-    --lightgreen:#5ACF00 ;
-    --green:#3A8600 ;
-    --darkgreen:#275B00 ;
+/* Colour palette */
+:root {
+    --main: #49A900;
+    /* Main Primary color */
+    --lime: #80E632;
+    --lightgreen: #5ACF00;
+    --green: #3A8600;
+    --darkgreen: #275B00;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     height: 100%;
+    min-width: 320px;
 }
+
 
 ::placeholder {
     color: rgb(180, 65, 19);
 }
-/* Navbar css*/
 
-.navbarContainer{
-    background-color: var(--green);
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
+/* Image upload widget. Work in progress. */
 
-.navbar{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: 95%;
-    max-width: 1720px;
-    margin: 0 auto;
-}
-
-#logo{
-    transition: all 2s ease-in-out;
-}
-
-/* #navbarLogo{
-    color: var(--lime);
-    cursor: pointer;
-    align-self: center;
-    margin-right: 1.5%;
-} */
-
-#navMenuContainer{
-    display: flex;
-    width: 100%;
-}
-
-.navMenu{
-    display: flex;
-    list-style: none;
+/* .uploadOuter {
     text-align: center;
+    padding: 20px;
+    strong {
+      padding: 0 10px
+    }
+  }
+  .dragBox {
+    width: 250px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    line-height: 95px;
+    color: #999;
+    border: 2px dashed #ccc;
+    display: inline-block;
+    transition: transform 0.3s;
+    input[type="file"] {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+  .draging {
+    transform: scale(1.1);
+  }
+  #preview {
+    text-align: center;
+    img {
+      max-width: 100%
+    }
+  } */
+
+/* Body CSS */
+
+#layer-0 {
     width: 100%;
-    flex-grow: 4;
-}
-
-.navButtons{
-    color: var(--lime);
-    margin: 5px 10px;
-    flex-grow: 1;
-    align-self: center;
-}
-
-.navButtons:hover{
-    color: red;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-}
-
-#search{
-    background-color: var(--lime);
-    border: none;
-    padding: 4px;
-    border-radius: 4px;
-    width: 100%;
-    flex-grow: 6;
-    align-self: center;
-    margin: 5px 10px;
-}
-
-#search:focus{
-    outline: none;
-}
-
-.menuToggle .bar{
-    width: 25px;
-    height: 8px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: var(--lightgreen);
-    display: none;
-    cursor: pointer;
-}
-
-.bar:nth-child(1){
-    transform: translateY(13px) rotate(60deg);
-}
-
-.bar:nth-child(3){
-    transform: translateY(-13px) rotate(-60deg);
-}
-
-/* .bar:nth-child(4){
-    background-color: #6fbcbc;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    transform: translateY(-30px);
-}
-
-.bar:nth-child(5){
-    background-color: var(--pinegreen);
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    transform: translateY(-46px);
-    border: 1px solid;
-} */
-
-/* Navbar css*/
-
-/* body css*/
-
-#layer0{
-    background-color: var(--darkgreen);
-    width: 100%;
-    height:100%;
+    height: 100%;
     z-index: 0;
     overflow: auto;
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
-#layer1{
-    height: 100% ;
-    width: 90%;
-    padding: 3%;
+#layer-1 {
+    height: auto;
+    min-height: 100%;
+    width: 85%;
     margin: auto auto;
-    background-color: var(--lime);
-    border: 1px solid black;
 }
 
-#content{
-    display: flex;
-    width: 100%;
-    height: 30%;
+
+/* Welcome CSS? Not sure how to call it. */
+
+#introduction-wrapper {
+    width: 50%;
 }
 
-#latestRecipe{
-    display: block;
-    background-color: var(--main);
-    max-width: 57%;
-    min-width: 57vh;
-    align-content: center;
-    margin-right: 3%;
-    object-fit: contain;
+/* Image on top right of the Welcome. */
+
+#stock-photos {
+    width: 50%;
+    position: relative;
 }
 
-#latest{
-    object-fit: contain;
-    width: 100%;
+#stock-photo {
+    max-width: 45vw;
+    max-height: 27vw;
+    min-width: 28vw;
+    min-height: 18vw;
+    border-radius: 10%;
 }
 
-/* For mobile and small screens*/
+/* Recipe categories. */
 
-@media screen and (max-width:768px) {
-    .navbarContainer{
-        position: fixed;
-    }
+.category {
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bold;
+    color: #275B00;
+}
 
-    .navMenu{
-        display: flex;
-        flex-direction: column;
-        background: var(--main);
-        margin: 0px;
+.category:hover {
+    background-color: #28a745;
+}
+
+@media screen and (min-width: 320px) {
+
+    #layer-1 {
+        background-color: #d3ffc2;
         width: 100%;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 0;
-        transition: all 0.5s ease;
+        padding: 0.5rem !important;
     }
 
-    /* #navbarLogo{
-        margin-left:0px;
-        background-image: url(../img/logo_simple_small.png);
-        width: 84px;
-        height: 63px;
-        background-repeat: no-repeat;
-    } */
+    /* Welcome CSS? Not sure how to call it. */
 
-    .navMenu.active{
-        left:0;
-        opacity: 1;
-        transition: all 0.5 ease;
+    #header {
+        display: contents;
     }
 
-    .navButtons{
-        text-align: center;
-        color: red;
-        line-height: 60px;
+    #introduction-wrapper {
         width: 100%;
+        padding: 0px;
+    }
+
+    #introduction-welcome {
+        font-size: 6vw;
+    }
+
+    #introduction-message:first-child {
+        font-size: 3.5vw;
         margin: 0;
     }
 
-    .navButtons:hover{
-        background-color: var(--darkgreen);
-        color: var(--lime);
-        transition: all 0.5s ease-out;
+    #introduction-message {
+        margin-bottom: 0;
+        flex-grow: 7;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
 
-    #navMenuContainer{
-        display: flex;
-    }
-    #mobileMenu{
-        flex-grow: 1;
+    /* Add recipe button. */
+
+    #addRecipe-wrapper {
+        flex-grow: 2;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
 
-    .menuToggle .bar{
-        display: block;
+    #addRecipe {
+        max-width: 20vw;
+        background-image: url("../img_assets/cutting_board.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        aspect-ratio: 3/2;
+    }
+
+    #addRecipe:hover {
         cursor: pointer;
-        border: none;
-        height: 6.5px;
-        transition: all 0.4s ease-out;
     }
 
-    .menuToggle:hover{
-        cursor: pointer;
+    #addRecipe:first-child {
+        font-size: 3.5vw;
+        font-family: cursive;
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 1.5vw;
     }
 
-    .bar:nth-child(1){
-        transform: translateY(20px) rotate(0deg);
-    }
-    .bar:nth-child(3){
-        transform: translateY(-20px) rotate(0deg);
+    /* Image on top right of the Welcome. */
+
+    #stock-photos {
+        position: absolute;
+        visibility: hidden;
     }
 
-    #mobileMenu.is-active .bar:nth-child(2){
-        opacity: 0;
+    /* Recipe categories. */
+
+    .category {
+        font-size: small;
+        text-decoration: underline;
     }
 
-    #mobileMenu.is-active .bar:nth-child(1){
-        transform: translateY(11.5px) rotate(45deg);
-    }
-
-    #mobileMenu.is-active .bar:nth-child(3){
-        transform: translateY(-11.5px) rotate(-45deg);
+    #latest-Recipes-header {
+        font-size: 6vw;
     }
 }
+
+@media screen and (min-width: 481px) {}
+
+@media screen and (min-width: 601px) {
+
+    /* Recipe categories. */
+
+    #categories-container>div {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .category {
+        font-size: large;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+
+    #layer {
+        width: 85%;
+    }
+
+    /* Recipe categories. */
+
+    .category {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1025px) {}
+
+@media screen and (min-width: 1441px) {}
