@@ -1,260 +1,314 @@
-:root{
-    --main: #49A900	;/* Main Primary color */
-    --lime:#80E632 ;
-    --lightgreen:#5ACF00 ;
-    --green:#3A8600 ;
-    --darkgreen:#275B00 ;
+/* Colour palette */
+:root {
+    --main: #49A900;
+    /* Main Primary color */
+    --lime: #80E632;
+    --lightgreen: #5ACF00;
+    --green: #3A8600;
+    --darkgreen: #275B00;
 }
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
     height: 100%;
+    min-width: 320px;
+
 }
+
 
 ::placeholder {
     color: rgb(180, 65, 19);
 }
-/* Navbar css*/
 
-.navbarContainer{
-    background-color: var(--green);
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1;
-}
+/* Image upload widget. Work in progress. */
 
-.navbar{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    width: 95%;
-    max-width: 1720px;
-    margin: 0 auto;
-}
-
-#logo{
-    transition: all 2s ease-in-out;
-}
-
-/* #navbarLogo{
-    color: var(--lime);
-    cursor: pointer;
-    align-self: center;
-    margin-right: 1.5%;
-} */
-
-#navMenuContainer{
-    display: flex;
-    width: 100%;
-}
-
-.navMenu{
-    display: flex;
-    list-style: none;
+/* .uploadOuter {
     text-align: center;
-    width: 100%;
-    flex-grow: 4;
-}
-
-.navButtons{
-    color: var(--lime);
-    margin: 5px 10px;
-    flex-grow: 1;
-    align-self: center;
-}
-
-.navButtons:hover{
-    color: red;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
-}
-
-#search{
-    background-color: var(--lime);
-    border: none;
-    padding: 4px;
-    border-radius: 4px;
-    width: 100%;
-    flex-grow: 6;
-    align-self: center;
-    margin: 5px 10px;
-}
-
-#search:focus{
-    outline: none;
-}
-
-.menuToggle .bar{
-    width: 25px;
-    height: 8px;
-    margin: 5px auto;
-    transition: all 0.3s ease-in-out;
-    background: var(--lightgreen);
-    display: none;
-    cursor: pointer;
-}
-
-.bar:nth-child(1){
-    transform: translateY(13px) rotate(60deg);
-}
-
-.bar:nth-child(3){
-    transform: translateY(-13px) rotate(-60deg);
-}
-
-/* .bar:nth-child(4){
-    background-color: #6fbcbc;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    transform: translateY(-30px);
-}
-
-.bar:nth-child(5){
-    background-color: var(--pinegreen);
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    transform: translateY(-46px);
-    border: 1px solid;
-} */
-
-/* Navbar css*/
-
-/* body css*/
-
-#layer0{
-    background-color: var(--darkgreen);
-    width: 100%;
-    height:100%;
-    z-index: 0;
-    overflow: auto;
-    padding-top: 120px;
-}
-
-#layer1{
-    height: 100% ;
-    width: 90%;
-    padding: 3%;
-    margin: auto auto;
-    background-color: var(--lime);
-    border: 1px solid black;
-}
-
-#content{
-    display: flex;
-    width: 100%;
-    height: 30%;
-}
-
-#latestRecipe{
-    display: block;
-    background-color: var(--main);
-    max-width: 57%;
-    min-width: 57vh;
-    align-content: center;
-    margin-right: 3%;
-    object-fit: contain;
-}
-
-#latest{
-    object-fit: contain;
-    width: 100%;
-}
-
-/* For mobile and small screens*/
-
-@media screen and (max-width:768px) {
-    .navbarContainer{
-        position: fixed;
+    padding: 20px;
+    strong {
+      padding: 0 10px
     }
+  }
+  .dragBox {
+    width: 250px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    line-height: 95px;
+    color: #999;
+    border: 2px dashed #ccc;
+    display: inline-block;
+    transition: transform 0.3s;
+    input[type="file"] {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+  .draging {
+    transform: scale(1.1);
+  }
+  #preview {
+    text-align: center;
+    img {
+      max-width: 100%
+    }
+  } */
 
-    .navMenu{
-        display: flex;
-        flex-direction: column;
-        background: var(--main);
-        margin: 0px;
+@media screen and (min-width: 320px) {
+
+    /* Body CSS */
+
+    #layer-0 {
         width: 100%;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 0;
-        transition: all 0.5s ease;
+        height: 100%;
+        z-index: 0;
+        overflow: auto;
+        padding-top: 50px;
+        background-color: #d3ffc2;
+        transition: all 0.25s ease;
     }
 
-    /* #navbarLogo{
-        margin-left:0px;
-        background-image: url(../img/logo_simple_small.png);
-        width: 84px;
-        height: 63px;
+    #layer-1 {
+        height: auto;
+        min-height: 100%;
+        width: 100%;
+        margin: auto auto;
+        padding: 4vw !important;
+    }
+
+    /* Welcome CSS? Not sure how to call it. */
+    #header {
+        display: contents;
+    }
+
+
+    #introduction-wrapper {
+        width: 100%;
+    }
+
+    #introduction-welcome {
+        text-shadow: 2px 2px 5px --lime;
+        color: #275B00;
+        font-family: cursive;
+        font-size: 5vw;
+    }
+
+    #introduction-message:first-child {
+        font-size: 3.5vw;
+    }
+
+    #introduction-message {
+        color: #275B00;
+        font-family: cursive;
+        margin-bottom: 0;
+        flex-grow: 7;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    /*Add recipe button style*/
+    #addRecipe-wrapper {
+        flex-grow: 2;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    #addRecipe {
+        color: #275B00;
+        font-family: cursive;
+        max-width: 20vw;
+        background-image: url("../img_assets/cutting_board.png");
+        background-size: cover;
+        background-position: center;
         background-repeat: no-repeat;
-    } */
-
-    .navMenu.active{
-        left:0;
-        opacity: 1;
-        transition: all 0.5 ease;
+        aspect-ratio: 3/2;
+        z-index: 1;
     }
 
-    .navButtons{
+    #addRecipe:hover {
+        cursor: pointer;
+    }
+
+    #addRecipe:first-child {
+        font-size: 3.5vw;
+        font-family: cursive;
         text-align: center;
-        color: red;
-        line-height: 60px;
-        width: 100%;
-        margin: 0;
+        margin-bottom: 0;
+        padding-top: 1.5vw;
     }
 
-    .navButtons:hover{
-        background-color: var(--darkgreen);
-        color: var(--lime);
-        transition: all 0.5s ease-out;
-    }
+    /* Image on top right of the Welcome. */
 
-    #navMenuContainer{
-        display: flex;
-    }
-    #mobileMenu{
-        flex-grow: 1;
-    }
-
-    .menuToggle .bar{
-        display: block;
-        cursor: pointer;
-        border: none;
-        height: 6.5px;
-        transition: all 0.4s ease-out;
-    }
-
-    .menuToggle:hover{
-        cursor: pointer;
-    }
-
-    .bar:nth-child(1){
-        transform: translateY(20px) rotate(0deg);
-    }
-    .bar:nth-child(3){
-        transform: translateY(-20px) rotate(0deg);
-    }
-
-    #mobileMenu.is-active .bar:nth-child(2){
+    #stock-photos {
+        position: absolute;
         opacity: 0;
     }
 
-    #mobileMenu.is-active .bar:nth-child(1){
-        transform: translateY(11.5px) rotate(45deg);
+    /* Recipe categories. */
+
+    .category {
+        width: fit-content;
+        margin: 1vw;
+        padding-left: 5vw;
+        font-size: 4vw;
+        font-weight: bold;
+        text-decoration: underline;
+        color: #275B00;
     }
 
-    #mobileMenu.is-active .bar:nth-child(3){
-        transform: translateY(-11.5px) rotate(-45deg);
+    .category:hover {
+        cursor: pointer;
     }
+
+    #latest-Recipes-header {
+        color: #275B00;
+        font-family: cursive;
+        font-size: 6vw;
+        margin-bottom: 0px;
+        padding-bottom: 0px !important;
+    }
+}
+
+
+
+@media screen and (min-width: 481px) {}
+
+@media screen and (min-width: 601px) {
+    /* Body CSS */
+
+    #layer-0 {
+        padding-top: 80px !important;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    /* Body CSS */
+
+    #layer-1 {
+        width: 85%;
+    }
+
+    #addRecipe:first-child {
+        font-size: 2.5vw;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* Welcome CSS? Not sure how to call it. */
+
+    #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #introduction-welcome {
+        font-size: 4vw;
+    }
+
+    #introduction-message {
+        min-width: 80%;
+    }
+
+    #introduction-message:first-child {
+        font-size: 2.5vw;
+    }
+
+    /* Add recipe button. */
+
+    #addRecipe-wrapper {
+        position: relative;
+    }
+
+    #addRecipe {
+        position: absolute;
+        min-width: 18vw;
+        top: 7vw;
+    }
+
+    #addRecipe:first-child {
+        font-size: 2.8vw;
+    }
+
+    /* Image on top right of the Welcome. */
+
+    #stock-photos {
+        width: 50%;
+        position: relative;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+    #stock-photo {
+        max-width: 45vw;
+        max-height: 27vw;
+        min-width: 28vw;
+        min-height: 18vw;
+        border-radius: 10%;
+    }
+
+    /* Recipe categories. */
+
+    .category {
+        font-size: 2.5vw;
+    }
+
+    #latest-Recipes-header {
+        font-size: 4vw;
+        padding-top: 5vw;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+
+    /* Image on top right of the Welcome. */
+
+    #stock-photo {
+        min-width: 38vw;
+    }
+
+    /* #layer-1 {
+        width: 70%;
+    } */
+}
+
+@media screen and (min-width: 1921px) {
+
+    /* Image on top right of the Welcome. */
+
+    #stock-photo {
+        min-width: 45vw;
+    }
+
+    /* Body CSS */
+
+    #layer-0 {
+        padding-top: 120px !important;
+    }
+
+    /* 
+    #layer-1 {
+        width: 70%;
+    }*/
+
 }
