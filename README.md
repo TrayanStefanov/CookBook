@@ -19,6 +19,7 @@
 
 ## Features
 
+  - Carousels showing latest 10 recipes from latest (currently the only 5) categories.
   - Searching recipes. Currently only supports exact strings. 
   - Adding recipes. You can do this via the cutting board icon on the homepage. All modal fields are required. Currently only supports 1 image upload.
   - Updating recipes. On each recipe's detailed page via a button. At the moment updating recipe image is not supported.
