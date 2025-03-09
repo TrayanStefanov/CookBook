@@ -1,0 +1,178 @@
+/*All full recipe page CSS and it's elements**/
+
+@media screen and (min-width: 320px) {
+    #recipe-full-top:first-child {
+        flex-direction: column !important;
+    }
+
+    #recipe-full-image {
+        width: 100%;
+        aspect-ratio: 4/3;
+        border: black;
+        border-radius: 10%;
+    }
+
+    #title-time-wrapper {
+        flex-direction: row;
+    }
+
+    #title-time-wrapper:first-child {
+        min-width: 80% !important;
+        align-self: center !important;
+        padding-right: 0px !important;
+    }
+
+    #time-wrapper {
+        align-self: baseline;
+        min-width: 20%;
+    }
+
+    #clock-icon {
+        align-self: center;
+        width: 7vw;
+        height: 7vw;
+    }
+
+    #recipe-full-timeToCook {
+        align-self: center;
+    }
+
+    #intro-wrapper {
+        padding: 3vw;
+        font-style: italic;
+    }
+
+    #ingredients-wrapper-1440 {
+        position: absolute;
+        visibility: hidden;
+    }
+
+
+    #recipe-full-description-header:first-child {
+        text-decoration: underline;
+    }
+
+
+    .recipe-headers,
+    #recipe-full-timeToCook {
+        font-size: 7vw !important;
+    }
+
+    #recipe-full-summary,
+    #recipe-full-ingredients,
+    #recipe-full-description {
+        font-size: 4vw !important;
+    }
+
+    /* Buttons for modifications */
+
+    #homeButton a {
+        vertical-align: middle;
+        text-decoration: none;
+        color: white;
+        padding: 2px;
+    }
+
+    .updateButton,
+    .deleteButton {
+        background-color: #28a745;
+        color: white;
+        padding: 2px;
+    }
+
+    .updateButton:hover,
+    .deleteButton:hover,
+    #homeButton:hover {
+        color: #275B00;
+    }
+}
+
+@media screen and (min-width: 481px) {}
+
+@media screen and (min-width: 601px) {
+
+    #layer0 {
+        padding-top: 80px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    #recipe-full-top:first-child {
+        flex-direction: row !important;
+    }
+
+    #title-time-wrapper:first-child {
+        min-width: 90% !important;
+    }
+
+    #time-wrapper {
+        flex-direction: column !important;
+        min-width: 10% !important
+    }
+
+    #intro-wrapper {
+        padding: 2vw;
+    }
+
+    #clock-icon {
+        position: relative;
+        top: 10px;
+        width: 4vw !important;
+        height: 4vw !important;
+    }
+
+    .recipe-headers,
+    #recipe-full-timeToCook {
+        font-size: 4vw !important;
+    }
+
+    /* Buttons for modifications */
+
+    #recipe-full-summary,
+    #recipe-full-ingredients,
+    #recipe-full-description {
+        font-size: 2vw !important;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .recipe-headers,
+    #recipe-full-timeToCook {
+        font-size: 3vw !important;
+    }
+
+    /* Buttons for modifications */
+
+    #recipe-full-summary,
+    #recipe-full-ingredients,
+    #recipe-full-description {
+        font-size: 1.5vw !important;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    #ingredients-wrapper-1440 {
+        visibility: visible !important;
+        position: relative !important;
+    }
+
+    #ingredients-wrapper {
+        visibility: hidden !important;
+        position: absolute !important;
+    }
+
+    .recipe-headers,
+    #recipe-full-timeToCook {
+        font-size: 2vw !important;
+    }
+
+    /* Buttons for modifications */
+
+    #recipe-full-summary,
+    #recipe-full-ingredients,
+    #recipe-full-description {
+        font-size: 1vw !important;
+    }
+}
