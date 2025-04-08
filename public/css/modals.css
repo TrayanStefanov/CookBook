@@ -1,0 +1,175 @@
+@media screen and (min-width: 320px) {
+
+    ::placeholder {
+        color: grey !important;
+    }
+
+    /* Modal */
+    .modal-dialog{
+        margin-top: 60px !important;
+    }
+
+    /* Modal Header */
+    .modal-header {
+        justify-content: space-between;
+        background-color: var(--mandrago) !important;
+    }
+
+    .close-btn > .fa-circle-xmark {
+        line-height: normal !important;
+        font-size: var(--fs-1) !important;
+    }
+
+    .close-btn {
+        border: none;
+        background-color: inherit;
+    }
+
+    /* Modal body */
+
+    .modal-body {
+        background-color: var(--main) !important;
+    }
+
+    /* Form */
+    .form-field-header{
+        text-align: start;
+        text-indent: 1ch;
+    }
+
+    .form-control {
+        margin: 1.5vw 3vw;
+        justify-self: center;
+        field-sizing: content;
+        font-size: var(--fs-4) !important;
+    }
+
+    #add-files,
+    #add-typeOfDish {
+        color: grey !important;
+    }
+
+    .recipe-submit-btn {
+        width: 100%;
+        background-color: var(--mandrago) !important;
+        font-size: var(--fs-3);
+    }
+
+}
+
+@media screen and (min-width: 375px) {
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-2) !important;
+    }
+
+    .recipe-submit-btn {
+        font-size: var(--fs-4) !important;
+    }
+}
+
+@media screen and (min-width: 48px) {
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-3) !important;
+    }
+
+    .recipe-submit-btn {
+        font-size: var(--fs-5) !important;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .modal-dialog{
+        margin-top: 80px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .modal-dialog{
+        margin-top: 100px !important;
+    }
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-6) !important;
+        
+    }
+    .modal-body{
+        text-align: center;
+    }
+
+    .form-control{
+        font-size: var(--fs-7) !important;
+    }
+
+    .recipe-submit-btn{
+        width: 40%;
+        font-size: var(--fs-8) !important;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .modal-dialog{
+        min-width: 60%;
+    }
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-7) !important;
+    }
+
+    .form-control{
+        width: 90% !important;
+        font-size: var(--fs-8) !important;
+    }
+
+    .recipe-submit-btn{
+        width: 30%;
+        font-size: var(--fs-9) !important;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .modal-dialog{
+        min-width: 50%;
+    }
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-7) !important;
+    }
+
+    .form-control{
+        width: 85% !important;
+        font-size: var(--fs-9) !important;
+    }
+
+    .recipe-submit-btn{
+        width: 25%;
+        font-size: var(--fs-10) !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .modal-dialog{
+        margin-top: 140px !important;
+        min-width: 40%;
+    }
+
+    .close-btn > .fa-circle-xmark {
+        font-size: var(--fs-8) !important;
+    }
+
+    .form-control{
+        width: 80% !important;
+        font-size: var(--fs-10) !important;
+    }
+
+    .recipe-submit-btn{
+        width: 23%;
+        font-size: var(--fs-11) !important;
+    }
+}
