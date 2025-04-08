@@ -8,34 +8,86 @@
     #about-header {
         align-self: center;
         margin: 4vw;
-        font-size: 4vw;
+        text-decoration: underline;
+        text-underline-position: under;
     }
     
     .about-subheader {
-        font-size: 3vw;
+        text-indent: 1ch;
         margin: 2vw;
     }
     
     .about-text {
-        font-size: 2vw;
+        background-color: var(--main);
+        font-size: var(--fs-4);
+        text-indent: 2ch;
         margin: 0 5vw;
+        word-break: break-word;
+        hyphens: auto;
     }
     
     #aspirations {
-        text-align: center;
         margin-top: 1vw;
-        font-size: 3.5vw;
-        font-family: cursive;
+        font-style: italic;
+        text-align: center;
+        font-size: var(--fs-3);
+        font-family: var(--ff-cursive);
     }
 
 }
 
-@media screen and (min-width: 481px) {}
+@media screen and (min-width: 480px) {}
 
-@media screen and (min-width: 601px) {}
+@media screen and (min-width: 600px) {}
 
-@media screen and (min-width: 769px) {}
+@media screen and (min-width: 768px) {
 
-@media screen and (min-width: 1025px) {}
+    #about-header{
+        margin: 2vw;
+    }
 
-@media screen and (min-width: 1441px) {}
+    .about-text{
+        font-size: var(--fs-6);
+    }
+
+    #aspirations {
+        font-size: var(--fs-5);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    #about-header{
+        margin: 1vw;
+    }
+
+    .about-text{
+        font-size: var(--fs-7);
+    }
+
+    #aspirations {
+        font-size: var(--fs-6);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .about-text{
+        font-size: var(--fs-8);
+    }
+
+    #aspirations {
+        font-size: var(--fs-7);
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    .about-text{
+        font-size: var(--fs-9);
+    }
+
+    #aspirations {
+        font-size: var(--fs-8);
+    }
+}
