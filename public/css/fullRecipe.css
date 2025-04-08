@@ -1,6 +1,12 @@
 /*All full recipe page CSS and it's elements**/
 
 @media screen and (min-width: 320px) {
+
+    #complete-Recipe-container{
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+
     #recipe-full-top:first-child {
         flex-direction: column !important;
     }
@@ -9,36 +15,46 @@
         width: 100%;
         aspect-ratio: 4/3;
         border: black;
-        border-radius: 10%;
     }
 
     #title-time-wrapper {
+        display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        word-break: break-word;
+        hyphens: auto;
     }
 
-    #title-time-wrapper:first-child {
-        min-width: 80% !important;
-        align-self: center !important;
-        padding-right: 0px !important;
+    #recipe-full-title{
+        width: auto !important;
+    }
+
+    #recipe-title-time-sum-wrapper,
+    #ingredients-wrapper,
+    #description-wrapper{
+        background-color: var(--main);
     }
 
     #time-wrapper {
+        display: flex !important;
+        flex-direction: row;
+        width: auto !important;
         align-self: baseline;
-        min-width: 20%;
     }
 
-    #clock-icon {
+    #time-wrapper > .clock{
         align-self: center;
-        width: 7vw;
-        height: 7vw;
+        line-height: 1;
+        font-size: var(--fs-2);
     }
 
     #recipe-full-timeToCook {
-        align-self: center;
+        min-width: 3ch;
+        line-height: 1;
+        font-size: var(--fs-2);
     }
 
     #intro-wrapper {
-        padding: 3vw;
         font-style: italic;
     }
 
@@ -47,100 +63,114 @@
         visibility: hidden;
     }
 
-
-    #recipe-full-description-header:first-child {
+    #description-wrapper:first-child {
         text-decoration: underline;
     }
 
 
-    .recipe-headers,
-    #recipe-full-timeToCook {
-        font-size: 7vw !important;
-    }
+    /* .recipe-headers {
+        font-size: var(--fs-1) !important;
+    } */
 
     #recipe-full-summary,
     #recipe-full-ingredients,
     #recipe-full-description {
-        font-size: 4vw !important;
+        text-indent: 2ch;
+        font-size: var(--fs-3) !important;
+        word-break: break-word;
+        hyphens: auto;
     }
 
     /* Buttons for modifications */
 
-    #homeButton a {
-        vertical-align: middle;
+    .home-btn a {
         text-decoration: none;
-        color: white;
-        padding: 2px;
+        color: var(--darkgreen);
     }
 
-    .updateButton,
-    .deleteButton {
-        background-color: #28a745;
-        color: white;
-        padding: 2px;
+    .update-btn,
+    .delete-btn,
+    .home-btn {
+        background-color: var(--mandrago) !important;
     }
 
-    .updateButton:hover,
-    .deleteButton:hover,
-    #homeButton:hover {
-        color: #275B00;
-    }
 }
 
-@media screen and (min-width: 481px) {}
+@media screen and (min-width: 480px) {}
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 600px) {
 
     #layer0 {
         padding-top: 80px;
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 
     #recipe-full-top:first-child {
         flex-direction: row !important;
     }
 
-    #title-time-wrapper:first-child {
-        min-width: 90% !important;
+    #recipe-full-image-wrapper{
+        margin-right: 0.5rem !important;
     }
 
-    #time-wrapper {
-        flex-direction: column !important;
-        min-width: 10% !important
+    #recipe-title-time-sum-wrapper{
+        align-content: center;
+        margin-top: 0 !important;
+        margin-left: 0.5rem !important;
     }
 
     #intro-wrapper {
         padding: 2vw;
+        padding-top: initial;
     }
 
-    #clock-icon {
-        position: relative;
-        top: 10px;
-        width: 4vw !important;
-        height: 4vw !important;
+    /* .recipe-headers{
+        font-size: 2.7vw !important;
+    } */
+
+    #recipe-full-timeToCook,
+    #time-wrapper > .clock {
+        font-size: var(--fs-6) !important;
     }
 
-    .recipe-headers,
-    #recipe-full-timeToCook {
-        font-size: 4vw !important;
+    #ingredients-wrapper,
+    #description-wrapper,
+    #recipe-options {
+        margin-top: 1rem !important;
     }
-
-    /* Buttons for modifications */
 
     #recipe-full-summary,
     #recipe-full-ingredients,
     #recipe-full-description {
-        font-size: 2vw !important;
+        font-size: var(--fs-7) !important;
+    }
+
+    /* Buttons for modifications */
+
+    #recipe-options {
+        flex-direction: row !important;
+        justify-content: center;
+        margin: auto !important;
+    }
+
+    .update-btn,
+    .delete-btn,
+    .home-btn {
+        width: 22vw !important;
     }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1024px) {
 
-    .recipe-headers,
-    #recipe-full-timeToCook {
-        font-size: 3vw !important;
+    #recipe-full-image{
+        aspect-ratio: 5/3;
+    }
+
+    #recipe-full-timeToCook,
+    #time-wrapper > .clock {
+        font-size: var(--fs-7) !important;
     }
 
     /* Buttons for modifications */
@@ -148,24 +178,20 @@
     #recipe-full-summary,
     #recipe-full-ingredients,
     #recipe-full-description {
-        font-size: 1.5vw !important;
+        font-size: var(--fs-8) !important;
+    }
+
+    .update-btn,
+    .delete-btn,
+    .home-btn {
+        width: 17vw !important;
     }
 }
 
-@media screen and (min-width: 1441px) {
-    #ingredients-wrapper-1440 {
-        visibility: visible !important;
-        position: relative !important;
-    }
+@media screen and (min-width: 1440px) {
 
-    #ingredients-wrapper {
-        visibility: hidden !important;
-        position: absolute !important;
-    }
-
-    .recipe-headers,
     #recipe-full-timeToCook {
-        font-size: 2vw !important;
+        font-size: var(--fs-7) !important;
     }
 
     /* Buttons for modifications */
@@ -173,6 +199,38 @@
     #recipe-full-summary,
     #recipe-full-ingredients,
     #recipe-full-description {
-        font-size: 1vw !important;
+        font-size: var(--fs-9) !important;
+    }
+
+    .update-btn,
+    .delete-btn,
+    .home-btn {
+        width: 17vw !important;
+        font-size: var(--fs-8) !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+
+    #recipe-full-image-wrapper{
+        margin-right: 0.75rem !important;
+    }
+
+    #recipe-title-time-sum-wrapper{
+        align-content: center;
+        margin-left: 0.75rem !important;
+    }
+
+    #ingredients-wrapper,
+    #description-wrapper,
+    #recipe-options {
+        margin-top: 1.5rem !important;
+    }
+
+    .update-btn,
+    .delete-btn,
+    .home-btn {
+        width: 12vw !important;
+        font-size: var(--fs-10) !important;
     }
 }
