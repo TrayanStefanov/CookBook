@@ -1,34 +1,64 @@
 /* Colour palette */
-:root {
-    --main: #49A900;
-    /* Main Primary color */
+/* :root {
+    --main: #49a900;
     --lime: #80E632;
     --lightgreen: #5ACF00;
     --green: #3A8600;
     --darkgreen: #275B00;
+} */
+:root {
+
+    /* Colours */
+
+    /* Solid palette */
+    --main: #FFFFE4;
+    /* Main Primary color */
+    --mandrago: #D8E780;
+    --red: #D71709;
+    --darkgreen: #072000;
+
+    /* Typography */
+
+    /* font-family */
+    --ff-c: cursive;
+
+    /* font-size */
+    --fs-0: 8vw;
+    --fs-1: 6vw;
+    --fs-2: 5vw;
+    --fs-3: 4vw;
+    --fs-4: 3.5vw;
+    --fs-5: 3vw;
+    --fs-6: 2.5vw;
+    --fs-7: 2vw;
+    --fs-8: 1.5vw;
+    --fs-9: 1.25vw;
+    --fs-10: 1vw;
+    --fs-11: 0.8vw;
+
+    /* Transition */
+    --transition-1: all 0.2s ease-out;
+    --transition-2: all 0.25s ease;
+    --transition-3: all 0.5s ease;
+    --transition-4: all 1s ease-in-out;
+    --transition-5: all 2s ease-in-out;
+    --transition-6: all 4s ease-in-out;
+    --transition-7: all 0.5s ease-out;
+    --transition-9: opacity 0.5s;
+
 }
 
 
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    height: 100%;
-}
-
-body {
-    height: 100%;
-    min-width: 320px;
-
-}
-
 
 ::placeholder {
-    color: rgb(180, 65, 19);
+    color: var(--red);
 }
 
 /* Image upload widget. Work in progress. */
@@ -73,6 +103,42 @@ body {
 
 @media screen and (min-width: 320px) {
 
+    html {
+        height: 100%;
+    }
+    
+    body {
+        height: 100%;
+        min-width: 320px;
+    
+    }
+    
+    h1{
+        font-size: var(--fs-1) !important;
+        font-family: var(--ff-c);
+    }
+    
+    h2{
+        font-size: var(--fs-2) !important;
+        font-family: var(--ff-c);
+    }
+    
+    h3{
+        margin-bottom: initial !important;
+        font-size: var(--fs-1) !important;
+        font-family: var(--ff-c);
+    }
+
+    h4{
+        font-size: var(--fs-3) !important;
+        font-family: var(--ff-c);
+    }
+    
+    h5{
+        font-size: var(--fs-6) !important;
+        font-family: var(--ff-c);
+    }
+
     /* Body CSS */
 
     #layer-0 {
@@ -81,8 +147,7 @@ body {
         z-index: 0;
         overflow: auto;
         padding-top: 50px;
-        background-color: #d3ffc2;
-        transition: all 0.25s ease;
+        transition: var(--transition-2);
     }
 
     #layer-1 {
@@ -102,21 +167,16 @@ body {
     #introduction-wrapper {
         width: 100%;
     }
-
+    /* 
     #introduction-welcome {
-        text-shadow: 2px 2px 5px --lime;
-        color: #275B00;
-        font-family: cursive;
-        font-size: 5vw;
-    }
+    } */
 
     #introduction-message:first-child {
-        font-size: 3.5vw;
+        font-size: var(--fs-4);
     }
 
     #introduction-message {
-        color: #275B00;
-        font-family: cursive;
+        font-family: var(--ff-c);
         margin-bottom: 0;
         flex-grow: 7;
         padding-left: 1vw;
@@ -131,8 +191,7 @@ body {
     }
 
     #addRecipe {
-        color: #275B00;
-        font-family: cursive;
+        font-family: var(--ff-c);
         max-width: 20vw;
         background-image: url("../img_assets/cutting_board.png");
         background-size: cover;
@@ -147,11 +206,11 @@ body {
     }
 
     #addRecipe:first-child {
-        font-size: 3.5vw;
-        font-family: cursive;
+        align-content: center;
+        font-size: var(--fs-4);
+        font-family: var(--ff-c);
         text-align: center;
         margin-bottom: 0;
-        padding-top: 1.5vw;
     }
 
     /* Image on top right of the Welcome. */
@@ -163,14 +222,34 @@ body {
 
     /* Recipe categories. */
 
+    #categories-container{
+        flex-direction: row !important;
+        justify-content: space-between;
+    }
+
+    #categories-container > .category-header{
+        width: auto !important;
+    }
+
+    #categories-container > .category{
+        width: auto !important;
+    }
+
+    .category-header {
+        display: inline-block;
+    }
+
     .category {
         width: fit-content;
-        margin: 1vw;
-        padding-left: 5vw;
-        font-size: 4vw;
-        font-weight: bold;
-        text-decoration: underline;
-        color: #275B00;
+        margin: 2px;
+        font-size: var(--fs-3);
+    }
+
+    .category-underline{
+        display: block;
+        height: 1px;
+        margin-bottom: 1vw;
+        background-color: #072000;
     }
 
     .category:hover {
@@ -178,19 +257,28 @@ body {
     }
 
     #latest-Recipes-header {
-        color: #275B00;
-        font-family: cursive;
-        font-size: 6vw;
+        font-family: var(--ff-c);
+        font-size: var(--fs-2);
         margin-bottom: 0px;
         padding-bottom: 0px !important;
     }
 }
 
+@media screen and (min-width: 375px) {
 
+    h3{
+        font-size: var(--fs-2) !important;
+    }
+}
 
-@media screen and (min-width: 481px) {}
+@media screen and (min-width: 480px) {
 
-@media screen and (min-width: 601px) {
+    h3{
+        font-size: var(--fs-3) !important;
+    }
+}
+
+@media screen and (min-width: 600px) {
     /* Body CSS */
 
     #layer-0 {
@@ -198,22 +286,74 @@ body {
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
+
+    h1{
+        font-size: var(--fs-3) !important;
+    }
+    
+    h2{
+        font-size: var(--fs-4) !important;
+    }
+
+    h3{
+        font-size: var(--fs-6) !important;
+    }
+
+    h4{
+        font-size: var(--fs-6) !important;
+    }
+
+    h5{
+        font-size: var(--fs-7) !important;
+    }
 
     /* Body CSS */
 
     #layer-1 {
         width: 85%;
+        padding: 2vw !important;
+    }
+
+    #introduction-message:first-child {
+        font-size: var(--fs-6);
     }
 
     #addRecipe:first-child {
-        font-size: 2.5vw;
+        font-size: var(--fs-6);
+    }
+
+    .category{
+        font-size: var(--fs-4);
+    }
+
+    .category-underline{
+        height: 2px;
     }
 
 }
 
 @media screen and (min-width: 1024px) {
 
+    h1{
+        font-size: var(--fs-4) !important;
+    }
+
+    h2{
+        font-size: var(--fs-5) !important;
+    }
+    
+    h3{
+        font-size: var(--fs-7) !important;
+    }
+
+    h4{
+        font-size: var(--fs-7) !important;
+    }
+
+    h5{
+        font-size: var(--fs-9) !important;
+    }
     /* Welcome CSS? Not sure how to call it. */
 
     #header {
@@ -222,18 +362,13 @@ body {
         justify-content: space-between;
     }
 
-    #introduction-welcome {
-        font-size: 4vw;
-    }
-
     #introduction-message {
         min-width: 80%;
     }
 
     #introduction-message:first-child {
-        font-size: 2.5vw;
+        font-size: var(--fs-5);
     }
-
     /* Add recipe button. */
 
     #addRecipe-wrapper {
@@ -243,11 +378,10 @@ body {
     #addRecipe {
         position: absolute;
         min-width: 18vw;
-        top: 7vw;
     }
 
     #addRecipe:first-child {
-        font-size: 2.8vw;
+        font-size: var(--fs-6) !important;
     }
 
     /* Image on top right of the Welcome. */
@@ -270,7 +404,8 @@ body {
     /* Recipe categories. */
 
     .category {
-        font-size: 2.5vw;
+        font-size: var(--fs-5);
+
     }
 
     #latest-Recipes-header {
@@ -279,36 +414,99 @@ body {
     }
 }
 
-@media screen and (min-width: 1441px) {
+@media screen and (min-width: 1440px) {
 
     /* Image on top right of the Welcome. */
 
-    #stock-photo {
-        min-width: 38vw;
+    h1{
+        font-size: var(--fs-5) !important;
+    }
+    
+    h2{
+        font-size: var(--fs-6) !important;
     }
 
-    /* #layer-1 {
-        width: 70%;
-    } */
+    h3{
+        font-size: var(--fs-7) !important;
+    }
+
+    h4{
+        font-size: var(--fs-8) !important;
+    }
+
+    h5{
+        font-size: var(--fs-10) !important;
+    }
+
+
+    #layer-1 {
+        padding: 1vw !important;
+    }
+
+    #introduction-message:first-child {
+        font-size: var(--fs-6);
+    }
+
+    #addRecipe{
+        min-width: 13vw;
+        max-width: 13vw;
+    }
+
+    #addRecipe:first-child {
+        font-size: var(--fs-7) !important;
+    }
+
+    .category {
+        font-size: var(--fs-6);
+
+    }
 }
 
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1920px) {
+
+    h1{
+        font-size: var(--fs-6) !important;
+    }
+    
+    h2{
+        font-size: var(--fs-7) !important;
+    }
+
+    h3{
+        font-size: var(--fs-8) !important;
+    }
+
+    h4{
+        font-size: var(--fs-9) !important;
+    }
 
     /* Image on top right of the Welcome. */
 
-    #stock-photo {
-        min-width: 45vw;
+    /* Body CSS */
+    #layer-0 {
+        padding-top: 120px;
     }
 
-    /* Body CSS */
+    #introduction-message:first-child {
+        font-size: var(--fs-7);
+    }
+
+    #addRecipe:first-child {
+        font-size: var(--fs-7) !important;
+    }
+
+    .category {
+        font-size: var(--fs-7);
+    }
+
+    .category-underline{
+        height: 3px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
 
     #layer-0 {
-        padding-top: 120px !important;
+        padding-top: 150px;
     }
-
-    /* 
-    #layer-1 {
-        width: 70%;
-    }*/
-
 }
