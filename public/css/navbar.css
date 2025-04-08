@@ -1,19 +1,17 @@
-:root {
-    --main: #49A900;
-    /* Main Primary color */
-    --lime: #80E632;
-    --lightgreen: #5ACF00;
-    --green: #3A8600;
-    --darkgreen: #275B00;
-}
-
-
 @media screen and (min-width: 320px) {
+
+    .navbar-container * {
+        transition: var(--transition-4) !important;
+    }
 
     /* Navbar */
 
+    .fixed-top{
+        flex-wrap: nowrap !important;
+        padding: 1vw !important;
+    }
+
     .navbar-container {
-        background-color: var(--green);
         width: 100%;
         position: relative;
         left: 0;
@@ -24,9 +22,10 @@
     .navbar {
         display: flex;
         align-items: center;
-        height: 50px;
+        height: 50px; 
         width: 100%;
         margin: 0 auto;
+        background-color: var(--mandrago);
     }
 
     .navbar-brand{
@@ -38,13 +37,6 @@
     #logo {
         transition: all 2s ease-in-out;
         width: 75px;
-    }
-
-    #navbarLogo {
-        color: var(--lime);
-        cursor: pointer;
-        align-self: center;
-        margin-right: 1.5%;
     }
 
     #logo-link:hover {
@@ -73,15 +65,15 @@
     }
 
     #searchField {
-        width: 100%;
-        max-width: 56%;
-        flex-grow: 6;
-        background-color: var(--lime);
-        border: none;
-        padding: 4px;
-        border-radius: 4px;
+        width: auto;
         align-self: center;
+        flex-grow: 6;
         margin: 5px;
+        padding: 4px;
+        background-color: var(--main);
+        border: none;
+        border-radius: 4px;
+        font-size: var(--fs-3);
     }
 
     #searchField:focus {
@@ -118,14 +110,14 @@
     .nav-buttons {
         justify-content: center;
         text-align: center;
-        color: rgb(161, 60, 20);
+        color: var(--red);
         width: 100%;
         margin: 0;
     }
 
     .nav-buttons:hover {
-        background-color: #258103;
-        color: yellowgreen;
+        /*background-color: var(--darkgreen);*/
+        color: var(--main);
         transition: all 0.5s ease-out;
     }
 
@@ -135,7 +127,7 @@
 
     .navbar a {
         float: left;
-        font-size: 16px;
+        font-size: var(--fs-3);
         color: lime;
         text-align: center;
         padding: 8px 16px;
@@ -145,7 +137,7 @@
     .navbar a:hover {
         border: none;
         border-radius: 0%;
-        color: red;
+        color: var(--red);
     }
 
     /* Sub Navmenu */
@@ -156,13 +148,13 @@
     }
 
     .subnav .subnav-btn {
-        font-size: 16px;
+        font-size: var(--fs-3);
         border: none;
         outline: none;
-        color: var(--lime);
+        color: var(--red);
         padding: 8px 16px;
-        background-color: inherit;
-        font-family: inherit;
+        background-color: var(--mandrago);
+        font-family: var(-ff-c);
         margin: 0;
     }
 
@@ -170,7 +162,7 @@
     .subnav:hover .subnav-btn {
         border: none;
         border-radius: 0%;
-        color: red;
+        color: var(--main);
     }
 
     .subnav-btn:hover {
@@ -183,21 +175,21 @@
         margin-top: -6px;
         align-items: self-end;
         flex-direction: column;
-        background-color: red;
+        background-color: var(--main);
         z-index: 2;
     }
 
     .subnav-content a {
         width: 100%;
         float: left;
-        color: var(--lime);
+        color: var(--red) !important;
         text-decoration: none;
         font-weight: bold;
     }
 
     .subnav-content a:hover {
-        background-color: var(--green);
-        color: red;
+        background-color: var(--mandrago);
+        color: var(--main) !important;
     }
 
     .subnav:hover .subnav-content {
@@ -209,15 +201,18 @@
     #about {
         text-wrap-mode: nowrap;
         align-self: center;
-        color: var(--lime);
+        background-color: var(--mandrago);
+        color: var(--red);
         cursor: pointer;
         padding: 8px 16px;
+        font-size: var(--fs-3);
         font-weight: bold;
     }
 
     #about:hover {
+        /*background-color: var(--darkgreen);*/
         border: none;
-        color: red;
+        color: var(--main)
     }
 
     /* Settings / Mobile menu toggle */
@@ -236,7 +231,7 @@
         height: 6.5px;
         border: none;
         margin: 5px;
-        background: var(--lightgreen);
+        background: var(--red);
         cursor: pointer;
         transition: all 0.4s ease-in-out;
     }
@@ -266,19 +261,31 @@
     }
 }
 
-@media screen and (min-width: 481px) {}
+@media screen and (min-width: 375px) {
+    #searchField {
+        font-size: var(--fs-4);
+    }
+}
+
+@media screen and (min-width: 425px) {
+    #searchField {
+        font-size: var(--fs-5);
+    }
+}
 
 @media screen and (min-width: 601px) {
-    #logo {
-        width: 200px;
-    }
+
 
     .navbar {
         height: 80px;
     }
+    #logo {
+        width: 150px;
+    }
+
 
     #searchField {
-        max-width: 62%;
+        font-size: var(--fs-6);
     }
     
     .nav-menu {
@@ -286,22 +293,19 @@
     }
 
     .subnav .subnav-btn{
-        font-size: 20px;
-        padding: 24px 16px;
+        font-size: var(--fs-6);
     }
 
     .navbar a {
-        font-size: 20px;
-        padding: 24px 16px;
+        font-size: var(--fs-6);
     }
 
     #about {
-        font-size: 20px;
-        padding: 24px 16px;
+        font-size: var(--fs-6);
     }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 
     /* Navbar */
 
@@ -312,6 +316,11 @@
     /* Logo */
 
     /* Search */
+
+    #searchField {
+        width: 100%;
+        font-size: var(--fs-7);
+    }
 
     /* Nav Menu */
 
@@ -325,13 +334,14 @@
     .nav-buttons {
         display: flex;
         flex-direction: row;
-        color: var(--lime);
+        align-items: center;
+        height: 80px;
+        color: var(--red);
         margin: 5px 10px;
         align-self: center;
     }
 
     .nav-buttons:hover {
-        color: red;
         transition: all 0.2s ease-out;
         cursor: pointer;
     }
@@ -339,17 +349,29 @@
 
     .navbar a {
         float: left;
-        font-size: 16px;
-        color: lime;
+        font-size: var(--fs-9);
+        color: var(--mandrago);
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
     }
 
     .navbar a:hover {
-        color: red;
+        color: var(--red);
     }
 
+    .subnav .subnav-btn{
+        font-size: var(--fs-7);
+    }
+
+    .subnav-content a {
+        height: 50px;
+        align-content: center;
+    }
+
+    #about {
+        font-size: var(--fs-7);
+    }
     /* Sub Navmenu */
 
     .subnav-btn {
@@ -428,47 +450,84 @@
 } */
 }
 
-@media screen and (min-width: 1024px) {}
+@media screen and (min-width: 1024px) {
 
-@media screen and (min-width: 1025px) {
+    .fixed-top{
+        padding-right: 2vw !important;
+        transition: var(--transition-4);
+    }
+
     #logo {
-        width: 300px;
+        width: 200px;
+    }
+
+    /* #searchField {
+        font-size: var(--fs-7);
+    } */
+
+    /* .subnav .subnav-btn{
+        font-size: var(--fs-8);
+    }
+
+    .navbar a {
+        font-size: var(--fs-8);
+    }
+
+    #about {
+        font-size: var(--fs-8);
+    } */
+}
+@media screen and (min-width: 1441px) {
+
+    #searchField {
+        font-size: var(--fs-8);
+    }
+
+    .subnav .subnav-btn{
+        font-size: var(--fs-8);
+    }
+
+    #about {
+        font-size: var(--fs-8);
+    }
+
+    .subnav-content a {
+        height: 60px;
+    }
+
+    .navbar a {
+        font-size: var(--fs-9);
     }
 }
 
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1920px) {
     #logo {
-        width: 400px;
+        width: 240px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    #logo {
+        width: 300px;
     }
 
     .navbar {
         height: 120px;
     }
 
-    #searchField {
-        font-size: 24px;
-    }
-
     .nav-menu {
         top: 120px;
     }
 
-    .subnav .subnav-btn {
-        font-size: 24px;
-        padding: 24px 16px;
+    .nav-buttons{
+        height: 120px;
     }
 
     .subnav-content{
         top: 120px;
     }
 
-    .navbar a {
-        font-size: 24px;
-        padding: 24px 16px;
-    }
-
-    #about {
-        font-size: 24px;
-        padding: 24px 16px;
+    .subnav-content a{
+        height: 100px;
     }
 }
