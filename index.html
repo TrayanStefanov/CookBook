@@ -4,7 +4,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="EN">
+<html lang="BG">
 
 <head>
     <!-- Stylesheets used for the website -->
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/recipeCardCarousel.css" type="text/css">
     <link rel="stylesheet" href="./css/aboutPage.css" type="text/css">
     <link rel="stylesheet" href="./css/allRecipes.css" type="text/css">
+    <link rel="stylesheet" href="./css/modals.css" type="text/css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <meta charset="UTF-8">
@@ -26,7 +27,7 @@
     <div id="layer-0">
         <!-- Navigation bar for the website -->
         <div class="navbar-container">
-            <nav class="navbar navbar-expand-xl bg-dark navbar-dark fixed-top" style="padding: 2vw; flex-wrap: nowrap;">
+            <nav class="navbar navbar-expand-xl navbar-dark fixed-top">
                 <div class="navbar-brand">
                     <a id="logo-link" href="/">
                         <img id="logo" src="./img_assets/logo.png" alt="cookingAssistantLogo">
@@ -46,7 +47,7 @@
                 <div class="nav-menu">
                     <div class="nav-buttons subnav" id="nav-all-recipes">
                         <div class="subnav-btn"><b>Рецепти</b> <i class="fa fa-caret-down"></i></div>
-                        <div class="subnav-content bg-secondary">
+                        <div class="subnav-content">
                             <a id="nav-allRecipes">Всички</a>
                             <a id="nav-mainCourse">Основно</a>
                             <a id="nav-breakfast">Закуска</a>
@@ -58,7 +59,7 @@
                     <div class="nav-buttons" id="about">Повече за сайта
                     </div>
                 </div>
-                    <!-- Mobile Navigation Bar Toggle. To be implemented as Settings button while in desktop mode. -->
+                <!-- Mobile Navigation Bar Toggle. To be implemented as Settings button while in desktop mode. -->
                 <div class="menu-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -72,58 +73,57 @@
                 <div class="row" id="header">
                     <div class="col" id="introduction-wrapper">
                         <div class="row">
-                            <h1 class="display-10" id="introduction-welcome">Здравей, Аз съм твоя асистент готвач!
+                            <h1 id="introduction-welcome">Здравей, Аз съм твоят асистент готвач!
                             </h1>
                         </div>
                         <div class="row">
                             <div class="col" id="introduction-message">
-                                <p style="margin-bottom: 0px;">Аз съм тук да ти помогам с записването на
-                                    твойте любими рецепти в случай че ги забравиш!</p>
+                                <p style="margin-bottom: 0px;">Аз съм тук да ти помогам със записването на
+                                    твоите любими рецепти, в случай че ги забравиш!</p>
                             </div>
                             <div class="col" id="addRecipe-wrapper">
                                 <div id="addRecipe" data-bs-toggle="modal" data-bs-target="#add-recipe-modal">
-                                    <p>Хайде да сготвим</p>
+                                    <div>Хайде да сготвим</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div id="stock-photos">
+                    <!-- <div id="stock-photos">
                         <img id="stock-photo" class="img-fluid float-right" src="./img_assets/stock_img.png">
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
-                    <h1 class="pb-1 text-center" id="latest-Recipes-header">Скоро добавени рецепти</h1>
+                    <h2 class="pb-1 text-center" id="latest-Recipes-header">Скоро добавени рецепти</h2>
                 </div>
                 <!-- Container for the latest recipes -->
                 <div id="latest-recipe-list">
-                        <!-- Latest 5 recipies from each category are loaded here as carousels after DOM is loaded -->
+                    <!-- Latest 5 recipies from each category are loaded here as carousels after DOM is loaded -->
                 </div>
             </div>
         </div>
     </div>
-    
+
     <!-- Modal for adding a recipe -->
     <div class="modal" id="add-recipe-modal">
         <div class="modal-dialog">
             <div class="modal-content animated slideInLeft">
-                <div class="modal-header bg-success text-white">
+                <div class="modal-header">
                     <h3>Добави Рецепта</h3>
-                    <button class="btn-close" data-bs-dismiss="modal">
-                        <i class="fa fa-times-circle"></i>
+                    <button class="close-btn" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-circle-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body bg-light">
-                    <form id="add-recipe-form" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <input required id="add-title" maxlength="40" type="text" class="form-control"
-                                placeholder="Рецепта">
-                        </div>
-                        <div class="form-group">
-                            <input required id="add-summary" style="width:100%; height:3vw;" maxlength="100" type="text"
-                                class="form-control" placeholder="Кратко описание">
-                        </div>
-                        <div class="form-group">
-                            <select required id="add-typeOfDish" class="form-control" type=text placeholder="">
+                <div class="modal-body">
+                    <div class="modal-body">
+                        <form id="add-recipe-form" enctype="multipart/form-data">
+                            <h4 class="form-field-header">Как се казва рецептата?</h4>
+                            <textarea class="form-control" id="add-title" required maxlength="50" type="text"
+                                role="textbox" contenteditable placeholder="Рецепта"></textarea>
+                            <h4 class="form-field-header">Напишете нещо накратно за нея:</h4>
+                            <textarea class="form-control" id="add-summary" required maxlength="100" type="text"
+                                placeholder="Кратко описание"></textarea>
+                            <h4 class="form-field-header">Изберете вида на рецептата:</h4>
+                            <select class="form-control" id="add-typeOfDish" required type=text placeholder="">
                                 <option value="" disabled selected hidden>Изберете вид на рецептата:</option>
                                 <option value="Основно">Основно</option>
                                 <option value="Закуска">Закуска</option>
@@ -131,37 +131,33 @@
                                 <option value="Бързо&Лесно">Бързо&Лесно</option>
                                 <option value="Романтични вечери">Романтични вечери</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <input required id="add-ingredients" type="text" class="form-control"
-                                placeholder="Съставки">
-                        </div>
-                        <div class="form-group">
-                            <input required id="add-timeToCook" type="number" class="form-control" placeholder="Време">
-                        </div>
-                        <div class="form-group">
-                            <input required id="add-description" style="width:100%; height:10vw;" maxlength="1000"
-                                type="text" class="form-control" placeholder="Описание">
-                        </div>
-                        <div class="form-group">
-                            <!-- Multiple image upload to be implemented in the future -->
-                            <!--
-                                <div class="uploadOuter">
-                                    <label for="uploadFile" class="btn btn-primary">Upload Image</label>
-                                    <strong>OR</strong>
-                                    <span class="dragBox">
-                                        Drag and Drop image here */
-                                    </span>
-                                </div>
-                                <div id="preview"></div>
-                                <form id="uploadForm" enctype="multipart/form-data">
-                                </form>
-                                -->
-                            <input type="file" id="add-files" accept="image/*" />
-                        </div>
-                        <div>
-                            <input type="submit" value="Добави Рецепта" class="btn btn-success">
-                        </div>
+                            <h4 class="form-field-header">Какви съставки ни трябват?</h4>
+                            <textarea class="form-control" id="add-ingredients" required type="text"
+                                placeholder="Съставки"></textarea>
+                            <h4 class="form-field-header">Колко време ще отнеме?</h4>
+                            <input class="form-control" id="add-timeToCook" required type="number" placeholder="Време">
+                            <h4 class="form-field-header">Опишете процеса на готвене:</h4>
+                            <textarea class="form-control" id="add-description" required maxlength="1000" type="text"
+                                placeholder="Описание"></textarea>
+                            <h4 class="form-field-header">Качете снимка на вашата рецепта:</h4>
+                            <input class="form-control" id="add-files" type="file" accept="image/*" />
+                    </div>
+
+                    <!-- Multiple image upload to be implemented in the future -->
+                    <!--
+                                    <div class="uploadOuter">
+                                        <label for="uploadFile" class="btn btn-primary">Upload Image</label>
+                                        <strong>OR</strong>
+                                        <span class="dragBox">
+                                            Drag and Drop image here */
+                                        </span>
+                                    </div>
+                                    <div id="preview"></div>
+                                    <form id="uploadForm" enctype="multipart/form-data">
+                                    </form>
+                                    -->
+
+                    <input class="btn recipe-submit-btn" type="submit" value="Добави Рецепта">
                     </form>
                 </div>
             </div>
@@ -172,51 +168,38 @@
     <div class="modal" id="update-recipe-modal">
         <div class="modal-dialog">
             <div class="modal-content animated slideInRight">
-                <div class="modal-header bg-secondary text-white">
+                <div class="modal-header">
                     <h3>Редактирай Рецепта</h3>
-                    <button class="btn-close" data-bs-dismiss="modal">
-                        <i class="fa fa-times-circle"></i>
+                    <button class="close-btn" data-bs-dismiss="modal">
+                        <i class="fa-solid fa-circle-xmark"></i>
                     </button>
                 </div>
-                <div class="modal-body bg-light">
+                <div class="modal-body">
                     <form id="update-recipe-form">
-                        <div class="form-group">
-                            <input required id="update-id" hidden class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <input required id="update-title" maxlength="40" type="text" class="form-control"
-                                placeholder="Рецепта">
-                        </div>
-                        <div class="form-group">
-                            <input required id="update-summary" style="width:100%; height:3vw;" maxlength="100"
-                                type="text" class="form-control" placeholder="Кратко описание">
-                        </div>
-                        <div class="form-group">
-                            <select required id="update-typeOfDish" class="form-control" type=text placeholder="">
-                                <option value="" disabled selected hidden>Изберете вид на рецептата:</option>
-                                <option value="Основно">Основно</option>
-                                <option value="Закуска">Закуска</option>
-                                <option value="Десерт">Десерт</option>
-                                <option value="Бързо&Лесно">Бързо&Лесно</option>
-                                <option value="Романтични вечери">Романтични вечери</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <input required id="update-ingredients" type="text" class="form-control"
-                                placeholder="Съставки">
-                        </div>
-                        <div class="form-group">
-                            <input required id="update-timeToCook" type="number" class="form-control"
-                                placeholder="Време">
-                        </div>
-                        <div class="form-group">
-                            <input required id="update-description" style="width:100%; height:10vw;" maxlength="1000"
-                                type="text" class="form-control" placeholder="Описание">
-                        </div>
-                            <!-- Updating recipe images to be implemented in the future -->
-                        <div>
-                            <input type="submit" value="Добави Рецепта" class="btn btn-success">
-                        </div>
+                        <input class="form-control" id="update-id" required hidden>
+                        <h4 class="form-field-header">Променете името:</h4>
+                        <textarea class="form-control" id="update-title" required maxlength="50" type="text"></textarea>
+                        <h4 class="form-field-header">Променете краткото описание:</h4>
+                        <textarea class="form-control" id="update-summary" required 
+                            maxlength="100" type="text"></textarea>
+                        <h4 class="form-field-header">Променете вида:</h4>
+                        <select class="form-control" id="update-typeOfDish" required type=text placeholder="">
+                            <option value="" disabled selected hidden>Изберете вид на рецептата:</option>
+                            <option value="Основно">Основно</option>
+                            <option value="Закуска">Закуска</option>
+                            <option value="Десерт">Десерт</option>
+                            <option value="Бързо&Лесно">Бързо&Лесно</option>
+                            <option value="Романтични вечери">Романтични вечери</option>
+                        </select>
+                        <h4 class="form-field-header">Променете съставките:</h4>
+                        <textarea class="form-control" id="update-ingredients" required type="text"></textarea>
+                        <h4 class="form-field-header">Променете времето за готвене:</h4>
+                        <input class="form-control" id="update-timeToCook" required type="number">
+                        <h4 class="form-field-header">Променете начина на приготвяне:</h4>
+                        <textarea class="form-control" id="update-description" required
+                            maxlength="1000" type="text"></textarea>
+                        <!-- Updating recipe images to be implemented in the future -->
+                        <input class="btn recipe-submit-btn" type="submit" value="Редактирай Рецепта">
                     </form>
                 </div>
             </div>
@@ -232,7 +215,7 @@
 
 </html>
 
-
+<!-- 
                     <div class="row">
                         <div class="col">
                             <div class="card" style="border:none; border-radius: 2vw;">
@@ -294,4 +277,3 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
