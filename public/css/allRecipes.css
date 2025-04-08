@@ -1,7 +1,7 @@
 @media screen and (min-width: 320px) {
 
     #title {
-        font-family: cursive;
+        font-family: var(--ff-c);
         color: var(--darkgreen);
     }
 
@@ -19,20 +19,6 @@
         border-top-right-radius: 2vw;
     }
 
-    #recipe-list .card-time-container{
-        top: 2px;
-        left: 4px;
-    }
-
-    #recipe-list .card-timeToCook-icon{
-        height: 4vw;
-        width: 4vw;
-    }
-
-    #recipe-list .card-timeToCook{
-        font-size: 4vw;
-    }
-
     .moreInfo {
         visibility: hidden;
     }
@@ -46,59 +32,35 @@
 
     #title {
         padding: 2vw;
-        font-size: 4vw;
+        font-size: var(--fs-3);
     }
 
     #recipe-list .row>div {
         min-width: 33.33% !important;
     }
 
-    #recipe-list .card-time-container{
-        top: 1vw;
-        left: 1vw;
-    }
 
-    #recipe-list .card-timeToCook-icon{
-        height: 3vw;
-        width: 3vw;
-    }
-
-    #recipe-list .card-timeToCook{
-        font-size: 3vw;
-    }
+    /* #recipe-list .card-timeToCook .card-timeToCook-icon{
+        font-size: var(--fs-5);
+    } */
 }
 
 @media screen and (min-width: 1024px) {
 
-    #title {
-        font-size: 5vw;
-    }
 
     #recipe-list .row>div {
         min-width: 25% !important;
     }
 
-    #recipe-list .card-timeToCook-icon{
-        height: 2vw;
-        width: 2vw;
-    }
-
-    #recipe-list .card-timeToCook{
-        font-size: 2vw;
-    }
-
     .moreInfo {
-        font-size: 1vw !important;
+        font-size: var(--fs-8) !important;
         visibility: visible;
     }
 }
 
 @media screen and (min-width: 1441px) {
+
     #recipe-list .row>div {
         min-width: 20% !important;
-    }
-
-    #recipe-list .card-time-container{
-        top: 1.5vw;
     }
 }
