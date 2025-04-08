@@ -106,15 +106,33 @@ let searchRecipes = (searchTerm) => {
                 </h1>
             </div>
             <div class="row" id="categories-container">
-                    <div class="col category" id="allRecipes">Всички</div>
-                    <div class="col category" id="mainCourse">Основно</div>
-                    <div class="col category" id="breakfast">Закуска</div>
-                    <div class="col category" id="desert">Десерт</div>
-                    <div class="col category" id="easyPeasy">Бързо&Лесно</div>
-                    <div class="col category" id="dateNight">Романтични вечери</div>
-            </div>
-            <div id="recipe-list" class="justify-content-center">
-            </div> 
+                <div class="category-header">
+                    <div class="category" id="allRecipes">Всички</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                <div class="category-header">
+                    <div class="category" id="mainCourse">Основно</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                <div class="category-header">
+                    <div class="category" id="breakfast">Закуска</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                <div class="category-header">
+                    <div class="category" id="desert">Десерт</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                <div class="category-header">
+                    <div class="category" id="easyPeasy">Бързо&Лесно</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                <div class="category-header">
+                    <div class="category" id="dateNight">Романтични вечери</div>
+                    <span class="category-underline" style="display: none;"></span>
+                </div>
+                </div>
+                <div id="recipe-list" class="justify-content-center">
+                </div> 
         `
         // Visualizing HTML block to prepare for recipe data.
         document.getElementById('layer-1').innerHTML = recipesPage;
@@ -126,23 +144,25 @@ let searchRecipes = (searchTerm) => {
             <div class="col pb-2">
                 <div class="card">
                     <img  class="card-img-top" src="${recipe.imgDirPath}" alt="2">
+                    <div class="card-time-circle">
                     <div class="card-time-container">
-                        <img class="card-timeToCook-icon" src="./img_assets/clock-icon.png" alt="">
+                        <i class="fa-regular fa-clock clock"></i>
                         <div class="card-timeToCook">${recipe.timeToCook}</div>
+                    </div>
                     </div>
                     <div class="card-body p2">
                         <div hidden>${recipe._id}</div>
                         <h5 class="card-title">${recipe.title}</h5>
-                        <p class="card-text">${recipe.summary}</p>
+                        <p class="card-text"> ${recipe.summary}</p>
                     </div>
-                    <button class="btn btn-success moreInfo";">Прочети повече</button>
+                    <button class="btn more-info-btn";">Прочети повече</button>
                 </div>
             </div>`;
         }
         // Visualizing the built HTML code block.
         document.getElementById("recipe-list").innerHTML = recipeRow;
         // Underline category if clicked/searched
-        document.getElementById(category).style.textDecoration = "underline";
+        document.getElementById(category).nextElementSibling.style.display = "block";
         // Reattaching Event listeners
         categoryClicker();
         document.getElementById('allRecipes').addEventListener('click', () => {
@@ -158,7 +178,10 @@ let searchRecipes = (searchTerm) => {
 let fetchLatestCategoryRecipes = () => {
     //Preping carousels
     let recipes = `
-        <div class="row category" id="mainCourse">Основно</div>
+        <div class="category-header">
+            <div class="category" id="mainCourse">Основно</div>
+            <span class="category-underline"></span>
+        </div>
         <div class="carouselWrapper">
             <div class="carousel slide" data-bs-interval="1000" id="carousel-mainCourse"
                 data-bs-ride="carousel">
@@ -167,16 +190,19 @@ let fetchLatestCategoryRecipes = () => {
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-mainCourse"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-la"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carousel-mainCourse"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-ra"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Next</span>
             </div>
         </div>
-        <div class="row category" id="breakfast">Закуска</div>
+        <div class="category-header">
+            <div class="category" id="breakfast">Закуска</div>
+            <span class="category-underline"></span>
+        </div>
         <div class="carouselWrapper">
             <div class="carousel slide" data-bs-interval="1000" id="carousel-breakfast"
                 data-bs-ride="carousel">
@@ -185,16 +211,19 @@ let fetchLatestCategoryRecipes = () => {
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-breakfast"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-la"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carousel-breakfast"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-ra"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Next</span>
             </div>
         </div>
-        <div class="row category" id="desert">Десерт</div>
+        <div class="category-header">
+            <div class="category" id="desert">Десерт</div>
+            <span class="category-underline"></span>
+        </div>
         <div class="carouselWrapper">
             <div class="carousel slide" data-bs-interval="1000" id="carousel-desert"
                 data-bs-ride="carousel">
@@ -203,16 +232,19 @@ let fetchLatestCategoryRecipes = () => {
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-desert"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-la"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carousel-desert"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-ra"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Next</span>
             </div>
         </div>
-        <div class="row category" id="easyPeasy">Бързо&Лесно</div>
+        <div class="category-header">
+            <div class="category" id="easyPeasy">Бързо&Лесно</div>
+            <span class="category-underline"></span>
+        </div>
         <div class="carouselWrapper">
             <div class="carousel slide" data-bs-interval="1000" id="carousel-easyPeasy"
                 data-bs-ride="carousel">
@@ -221,16 +253,19 @@ let fetchLatestCategoryRecipes = () => {
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-easyPeasy"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-la"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carousel-easyPeasy"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-ra"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Next</span>
             </div>
         </div>
-        <div class="row category" id="dateNight">Романтични вечери</div>
+        <div class="category-header">
+            <div class="category" id="dateNight">Романтични вечери</div>
+            <span class="category-underline"></span>
+        </div>
         <div class="carouselWrapper">
             <div class="carousel slide" data-bs-interval="1000" id="carousel-dateNight"
                 data-bs-ride="carousel">
@@ -239,12 +274,12 @@ let fetchLatestCategoryRecipes = () => {
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-dateNight"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-la"><i class="fa fa-angle-left" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carousel-dateNight"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-ra"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                     <span class="visually-hidden">Next</span>
             </div>
         </div>
@@ -292,21 +327,23 @@ let fetchCategoryRecipes = (searchTerm) => {
             <div class="carousel-item ${category}">
                 <div class="col-md-3">
                     <div class="card">
-                        <img  class="card-img-top" src="${recipe.imgDirPath}" alt="2">
+                        <img class="card-img-top" src="${recipe.imgDirPath}" alt="2">
+                        <div class="card-time-circle">
                         <div class="card-time-container">
-                            <img class="card-timeToCook-icon" src="./img_assets/clock-icon.png" alt="">
+                            <i class="fa-regular fa-clock clock"></i>
                             <div class="card-timeToCook">${recipe.timeToCook}</div>
+                        </div>
                         </div>
                         <div class="card-body p2">
                             <div hidden>${recipe._id}</div>
                             <h5 class="card-title">${recipe.title}</h5>
-                            <p class="card-text">${recipe.summary}</p>
+                            <p class="card-text"> ${recipe.summary}</p>
                         </div>
                     </div>
                 </div>
             </div>
             `;
-        // Visualizing the built HTML code block in it's specific category carousel.
+            // Visualizing the built HTML code block in it's specific category carousel.
             document.getElementById("carousel-content-" + category).innerHTML = categoryRecipesList;
             //Setting the active carousel slide.
             document.getElementById("carousel-content-" + category).firstElementChild.classList.add("active");
@@ -333,14 +370,16 @@ let fetchLatestRecipes = () => {
                 <div class="col-md-3">
                     <div class="card">
                         <img  class="card-img-top" src="${recipe.imgDirPath}" alt="2">
+                        <div class="card-time-circle">
                         <div class="card-time-container">
-                            <img class="card-timeToCook-icon" src="./img_assets/clock-icon.png" alt="">
+                            <i class="fa-regular fa-clock clock"></i>
                             <div class="card-timeToCook">${recipe.timeToCook}</div>
+                        </div>
                         </div>
                         <div class="card-body p2">
                             <div hidden>${recipe._id}</div>
                             <h5 class="card-title">${recipe.title}</h5>
-                            <p class="card-text">${recipe.summary}</p>
+                            <p class="card-text"> ${recipe.summary}</p>
                         </div>
                     </div>
                 </div>
@@ -372,12 +411,15 @@ let fetchAllRecipes = () => {
                 </h1>
             </div>
             <div class="row" id="categories-container">
-                    <div class="col category" style="text-decoration: underline" id="allRecipes">Всички</div>
-                    <div class="col category" id="mainCourse">Основно</div>
-                    <div class="col category" id="breakfast">Закуска</div>
-                    <div class="col category" id="desert">Десерт</div>
-                    <div class="col category" id="easyPeasy">Бързо&Лесно</div>
-                    <div class="col category" id="dateNight">Романтични вечери</div>
+                    <div class="category-header">
+                        <div class="category" id="allRecipes">Всички</div>
+                        <span class="category-underline"></span>
+                    </div>
+                    <div class="category" id="mainCourse">Основно</div>
+                    <div class="category" id="breakfast">Закуска</div>
+                    <div class="category" id="desert">Десерт</div>
+                    <div class="category" id="easyPeasy">Бързо&Лесно</div>
+                    <div class="category" id="dateNight">Романтични вечери</div>
             </div>
             <div id="recipe-list">
             </div> 
@@ -392,16 +434,18 @@ let fetchAllRecipes = () => {
             <div class="col pb-2">
                 <div class="card">
                     <img  class="card-img-top" src="${recipe.imgDirPath}" alt="2">
+                    <div class="card-time-circle">
                     <div class="card-time-container">
-                        <img class="card-timeToCook-icon" src="./img_assets/clock-icon.png" alt="">
+                        <i class="fa-regular fa-clock clock"></i>
                         <div class="card-timeToCook">${recipe.timeToCook}</div>
+                    </div>
                     </div>
                     <div class="card-body p2">
                         <div hidden>${recipe._id}</div>
                         <h5 class="card-title">${recipe.title}</h5>
-                        <p class="card-text">${recipe.summary}</p>
+                        <p class="card-text"> ${recipe.summary}</p>
                     </div>
-                    <button class="btn btn-success moreInfo">Прочети повече</button>
+                    <button class="btn more-info-btn">Прочети повече</button>
                 </div>
             </div>`;
         }
@@ -498,7 +542,7 @@ let populateUpdateModal = (selectedRecipe) => {
 
 // Update, delete, more info button handlers.
 
-            // Update button handler. TO DO: Optimization needed. Filter server side to reduce request load.
+// Update button handler. TO DO: Optimization needed. Filter server side to reduce request load.
 let updateClick = () => {
     clearUpdateFormFields();
     let selectedID = document.getElementById('recipe-full-id').innerHTML;
@@ -506,10 +550,10 @@ let updateClick = () => {
     console.log(objId);                                     Optimize needed
     console.log(typeof(objId)); */
     let url = `${serverURL}/listRecipes`;
-        // Server request.
+    // Server request.
     FetchHttp.get(url).then((data) => {
         let recipes = data;
-                // Maybe make the search server side.
+        // Maybe make the search server side.
 
         let selectedRecipe = recipes.find((recipe) => {
             return recipe._id === selectedID.trim();
@@ -534,82 +578,79 @@ let deleteClick = (targetRecipe) => {
     })
 }
 
-            // MoreInfo button handler. TO DO: Optimization needed. Filter server side to reduce request load.
+// MoreInfo button handler. TO DO: Optimization needed. Filter server side to reduce request load.
 
 let moreInfoClick = (targetRecipe) => {
 
     //Make do without server query
-    let selectedID = targetRecipe.parentElement.children[2].firstElementChild.innerHTML;
+    let recipeCard = targetRecipe;
+    do{
+        recipeCard = recipeCard.parentElement;
+    } while (recipeCard.className != "card");
+    let selectedID = recipeCard.children[2].firstElementChild.innerHTML;
     let url = `${serverURL}/listRecipes`;
-            // Server request.
+    // Server request.
 
     FetchHttp.get(url).then((data) => {
         let recipes = data;
         let selectedRecipe = recipes.find((recipe) => {
             return recipe._id === selectedID.trim();
         })
-                // Detailed recipe HTML block.
+        // Detailed recipe HTML block.
 
         document.getElementById('layer-1').innerHTML =
             `
-    <div id="complete-Recipe">
-        <div class="col">
-            <div class="row" id="recipe-full-top">
-                <div class="col">
-                    <div id="recipe-full-id" hidden>${selectedRecipe._id}</div>
-                    <img id="recipe-full-image" src="${selectedRecipe.imgDirPath}">
-                </div>
-                <div class="col">
-                    <div class="row" id="title-time-wrapper">
-                        <div class="col-9">
-                            <div id="recipe-full-title">
-                                <h3 class="recipe-headers">
-                                    ${selectedRecipe.title}
-                                </h3>
+            <div id="complete-Recipe-container">
+                <div id="complete-Recipe">
+                    <div class="col">
+                        <div class="row" id="recipe-full-top">
+                            <div class="col p-0" id="recipe-full-image-wrapper">
+                                <div id="recipe-full-id" hidden>${selectedRecipe._id}</div>
+                                <img id="recipe-full-image" class="rounded-4" src="${selectedRecipe.imgDirPath}">
+                            </div>
+                            <div class="col p-2 mt-2 rounded-4" id="recipe-title-time-sum-wrapper">
+                                <div id="title-time-wrapper">
+                                    <div id="recipe-full-title">
+                                        <h3 class="recipe-headers px-2">
+                                            ${selectedRecipe.title}
+                                        </h3>
+                                    </div>
+                                    <div class="m-1" id="time-wrapper">
+                                        <i class="fa-regular fa-clock clock"></i>
+                                        <div class="font-italic font-weight-bold pl-2" id="recipe-full-timeToCook">
+                                            ${selectedRecipe.timeToCook}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="intro-wrapper">
+                                    <div id="recipe-full-summary">
+                                            ${selectedRecipe.summary}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col d-flex justify-content-end" id="time-wrapper">
-                            <img id="clock-icon" src="./img_assets/clock-icon.png">
-                            <div class="font-italic font-weight-bold pl-2 pt-1" id="recipe-full-timeToCook">
-                                ${selectedRecipe.timeToCook}
+                        <div class="row p-2 mt-2 rounded-4" id="ingredients-wrapper">
+                                    <h3 class="recipe-headers px-2">Съставки:</h3>
+                                    <div id="recipe-full-ingredients">
+                                        ${selectedRecipe.ingredients}
+                                    </div>
+                                </div>
+                        <div class="row p-2 mt-2 rounded-4" id="description-wrapper">
+                            <h3 class="recipe-headers px-2">Начин на приготявяне:</h3>
+                            <div id="recipe-full-description">
+                                ${selectedRecipe.description}
                             </div>
                         </div>
-                    </div>
-                    <div class="row" id="intro-wrapper">
-                        <div class="shadow p-1" id="recipe-full-summary">
-                                ${selectedRecipe.summary}
-                        </div>
-                    </div>
-                    <div class="col shadow p-1 mt-3" id="ingredients-wrapper-1440">
-                        <h3 class="recipe-headers">Съставки:</h3>
-                        <div id="recipe-full-ingredients">
-                            ${selectedRecipe.ingredients}
+                        <div class="row p-2 mt-2 btn-group-sm" id="recipe-options">
+                            <button class="btn m-1 rounded-3 update-btn">Редактирай Рецептата</button>
+                            <button class="btn m-1 rounded-3 delete-btn">Изтрий Рецептата</button>
+                            <button class="btn m-1 rounded-3 home-btn"><a href="/">Начало</a></button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row shadow" id="ingredients-wrapper">
-                        <h3 class="recipe-headers">Съставки:</h3>
-                        <div id="recipe-full-ingredients">
-                            ${selectedRecipe.ingredients}
-                        </div>
-                    </div>
-            <div class="row p-2 mt-4" id="recipe-full-description-header">
-                <h3 class="recipe-headers">Начин на приготявяне</h3>
-                <div id="recipe-full-description">
-                    ${selectedRecipe.description}
-                </div>
-            </div>
-            <div class="row m-1 btn-group-sm justify-content-end" id="recipe-options">
-                <button class='btn btn-success updateButton'>Редактирай Рецептата</button>
-                <button class='btn btn-success deleteButton'>Изтрий Рецептата</button>
-                <button class='btn btn-success' id="homeButton"><a href="/">Начало</a></button>
-            </div>
-        </div>
-    </div>
-    `
-        // <-- <h3 class="recipe-headers">Интро</h3> -->
-    }).catch((err) => {
+            `
+        }).catch((err) => {
         console.log(err);
     })
 }
@@ -619,12 +660,15 @@ let moreInfoClick = (targetRecipe) => {
 let tableBody = document.getElementById('layer-1');
 tableBody.addEventListener('click', function (e) {
     let targetRecipe = e.target;
-    if (targetRecipe.classList.contains('deleteButton')) {
+    if (targetRecipe.classList.contains('delete-btn')) {
         deleteClick(targetRecipe)
-    } else if (targetRecipe.classList.contains('updateButton')) {
+    } else if (targetRecipe.classList.contains('update-btn')) {
         updateClick(targetRecipe)
-    } else if (targetRecipe.classList.contains('moreInfo')) {
-        moreInfoClick(targetRecipe)
+        // More-info should trigger via btn, card title and card image.
+    } else if (targetRecipe.classList.contains('more-info-btn') || 
+               targetRecipe.classList.contains('card-img-top') ||
+               targetRecipe.classList.contains('card-title')) {
+        moreInfoClick(targetRecipe);
     }
 })
 
@@ -667,27 +711,27 @@ document.getElementById('about').addEventListener('click', () => {
     document.getElementById('layer-1').innerHTML = `
         <div id="about-page-wrapper">
             <h1 id="about-header">Повече за сайта</h1>                
-            <h3 class="about-subheader">За какво може да се използва сайтът?</h3>
-            <p class="about-text">
+            <h2 class="about-subheader">За какво може да се използва сайтът?</h2>
+            <p class="about-text rounded-4 p-2 mt-2">
                 В момента сайтът е твоят персонален помощник за всичките ти кулинарни произведения на искуството.
                 Тук можеш да записваш успешните гозби които си приготвил и не искаш.
                 Или рецепти нуждаейки се от още усъвършенсвтане.
                 По всяко време можеш да потърсиш и намериш подходяща рецепта на момента.
                 Чрез категориите лесно може да избереш какво за сготвиш за всяко ядене от деня.  
             </p>
-            <h3 class="about-subheader">Колко хора работят върху този проект?</h3>
-            <p class="about-text">
+            <h2 class="about-subheader">Колко хора работят върху този проект?</h2>
+            <p class="about-text rounded-4 p-2 mt-2">
                 За момента се занимавам само аз. Ако искате да знаете повече за мен посете моят портфолио сайт.
                 Достъпен по късно тази година.
             </p>
-            <h3 class="about-subheader">Планове за бъдещето</h3>
-            <p class="about-text">
+            <h2 class="about-subheader">Планове за бъдещето:</h2>
+            <p class="about-text rounded-4 p-2 mt-2">
                 Смятам да продължавам да работя по този проект през свободното ми време. Създадох този сайт за моето улесняване по време на готвене и създаване на нови рецепти. 
                 Не мога да споделя конкретни планове за добавяне на нови функционалности,
                 но нещо което свободно мога да разкрия е - проектът ще се развие от личен асситент към социален сайт за споделяне, развиване и създаване на вкусни рецепти. 
                 Мечтата ми е някой ден този сайт да е най-разпространениа сайт за всичко кулинарни потребности на всеки българин.
             </p>
-            <b id="aspirations">Нека извисим българската кухня на първо място в света чрез нашите общи усилия.</b>    
+            <b id="aspirations" class="mt-2">Нека извисим българската кухня на първо място в света чрез нашите общи усилия.</b>    
         </div>
         `
 })
