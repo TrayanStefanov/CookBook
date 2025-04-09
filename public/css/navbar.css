@@ -90,7 +90,6 @@
         text-align: center;
         flex-grow: 10;
         flex-direction: column;
-        background: #62CE3A;
         margin: 0px;
         width: 100%;
         position: absolute;
@@ -128,7 +127,6 @@
     .navbar a {
         float: left;
         font-size: var(--fs-3);
-        color: lime;
         text-align: center;
         padding: 8px 16px;
         text-decoration: none;
