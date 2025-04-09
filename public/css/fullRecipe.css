@@ -29,10 +29,17 @@
         width: auto !important;
     }
 
-    #recipe-title-time-sum-wrapper,
-    #ingredients-wrapper,
-    #description-wrapper{
+    #recipe-title-time-sum-wrapper{
+
         background-color: var(--main);
+    }
+
+    #ingredients-wrapper{
+        background-color: var(--pastelred);
+    }
+
+    #description-wrapper{
+        background-color: var(--pastelgreen);
     }
 
     #time-wrapper {
