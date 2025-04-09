@@ -289,7 +289,7 @@ let fetchLatestCategoryRecipes = () => {
     fetchCategoryRecipes("Закуска");
     fetchCategoryRecipes("Десерт");
     fetchCategoryRecipes("Бързо&Лесно");
-    /* fetchCategoryRecipes("Романтични вечери"); */
+    fetchCategoryRecipes("Романтични вечери");
     // Visualizing the built HTML code block.
     document.getElementById('latest-recipe-list').innerHTML = recipes;
 }
