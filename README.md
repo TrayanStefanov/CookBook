@@ -7,6 +7,7 @@
 
   - Full stack project.
   - Runs on a mongo DB.
+  - Includes a DB with recipes added inside already to showcase site functionality
   
 ## How to Setup
 
