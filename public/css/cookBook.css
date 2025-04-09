@@ -10,12 +10,15 @@
 
     /* Colours */
 
-    /* Solid palette */
+    /*  Pastel pallete */
     --main: #FFFFE4;
-    /* Main Primary color */
+    --pastelred: #fed8d1;
+    --pastelgreen: #ddf9dc;
+    /* Solid palette */
     --mandrago: #D8E780;
     --red: #D71709;
     --darkgreen: #072000;
+    --green: #31D831;
 
     /* Typography */
 
