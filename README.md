@@ -1,7 +1,7 @@
 # CookBook Website
 
   A personal Cookbook for saving recipes so as to not forget them. This website was coded with VScode. 
-  It is localy hosted. No database is included at this time.
+  It is localy hosted. Alpha version.
 
 ## Specifications
 
@@ -12,14 +12,13 @@
 
   - Clone the repository.
   - All dependancies needed are included in the package.json file.
-  - Set up database and image storage folders. By default the folder paths are "*\CookBook\data\db" and "*\CookBook\public\uploads"
   - .env file is included. Change variables as needed.
   - Start database with "mongod --dbpath *your directory*\CookBook\data\db".  
   - Start the server with "npm run server".
 
 ## Features
 
-  - Carousels showing latest 10 recipes from latest (currently the only 5) categories.
+  - Carousels showing latest 10 recipes from latest 5(currently the only 5) categories.
   - Searching recipes. Currently only supports exact strings. 
   - Adding recipes. You can do this via the cutting board icon on the homepage. All modal fields are required. Currently only supports 1 image upload.
   - Updating recipes. On each recipe's detailed page via a button. At the moment updating recipe image is not supported.
